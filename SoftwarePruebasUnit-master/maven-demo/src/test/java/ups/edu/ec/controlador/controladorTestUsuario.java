@@ -38,6 +38,20 @@ public class controladorTestUsuario {
 	/**
 	 * Modulo Socio
 	 */
+	
+	//Agregado
+	@Test
+	public void testIngresarGrupo7ATuVidaBB() {
+		Socio socio1 = new Socio();
+		socio1.setCod(1);
+		socio1.setNombreCompleto("Grupo");
+		socio1.setApellidosCompletos("Siete");
+		socio1.setCorreo("grupo7@gmail.com");
+		socio1.setContraseña("12346");	
+		ArrayList respuesta = con.ingresarSocio(socio1);
+		assertNotNull(respuesta);
+	}
+			
 	@Test
 	public void testMostrarListaSocio() {
 		socio.setCod(1);
@@ -88,7 +102,7 @@ public class controladorTestUsuario {
 		assertNotNull(resultado1);
 
 		}
-
+	/*
 	@Test
 	public void testIngresarSocio() {
 		Socio socio1 = new Socio();
@@ -98,9 +112,9 @@ public class controladorTestUsuario {
 		socio1.setCorreo("juanv@gmail.com");
 		socio1.setContraseña("1234");	
 		ArrayList respuesta = con.ingresarSocio(socio1);
-	assertNotNull(respuesta);
+		assertNotNull(respuesta);
 	}
-
+	*/
 	@Test
 	public void testIniciarSesion() {
 		String correo = "juanv@gmail.com";
@@ -142,7 +156,7 @@ public class controladorTestUsuario {
 		double total = con.calcularInteres(saldo, interes, tasa);
 		assertEquals(esperado, total, 0);
 	}
-
+	
 	public void testAgregarAdministrador() {
 		Administrador administrador1 = new Administrador();
 		administrador1.setCod(1);
@@ -153,4 +167,5 @@ public class controladorTestUsuario {
 		ArrayList respuesta = con.agregarAdministrador(administrador1);
 		assertNull(respuesta);
 	}
+		
 }
